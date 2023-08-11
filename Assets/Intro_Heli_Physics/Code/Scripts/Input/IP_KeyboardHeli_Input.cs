@@ -54,12 +54,12 @@ namespace IndiePixel
 		
 		void HandleThrottle()
 		{
-
+			throttleInput = Input.GetAxis("Throttle");
 		}
 		
 		void HandleCollective()
 		{
-
+			collectiveInput = Input.GetAxis("Collective");
 		}	
 				
 		void HandleCyclic()
@@ -70,7 +70,7 @@ namespace IndiePixel
 		
 		void HandlePedal()
 		{
-
+			pedalInput = Input.GetAxis("Pedal");
 		}		
 		
 	

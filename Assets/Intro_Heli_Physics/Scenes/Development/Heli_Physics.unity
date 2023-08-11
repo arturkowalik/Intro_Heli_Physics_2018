@@ -831,7 +831,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1233469178
+--- !u!114 &1233469180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1123,5 +1123,5 @@ PrefabInstance:
       addedObject: {fileID: 1233469175}
     - targetCorrespondingSourceObject: {fileID: 47105033144849708, guid: 4c0152ed0e195d241b08dab975521873, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1233469178}
+      addedObject: {fileID: 1233469180}
   m_SourcePrefab: {fileID: 100100000, guid: 4c0152ed0e195d241b08dab975521873, type: 3}
