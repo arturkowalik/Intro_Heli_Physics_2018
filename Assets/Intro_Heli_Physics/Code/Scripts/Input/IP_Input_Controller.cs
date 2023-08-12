@@ -21,6 +21,30 @@ namespace IndiePixel
 		
 		private IP_KeyboardHeli_Input keyInput;
 		private IP_XboxHeli_Input xboxInput;
+		
+		private float throttleInput;
+		public float ThrottleInput
+		{
+			get { return throttleInput; }
+		}
+		
+		private float collectiveInput;
+		public float CollectiveInput
+		{
+			get { return collectiveInput; }
+		}
+		
+		private Vector2 cyclicInput;
+		public Vector2 CyclicInput
+		{
+			get { return cyclicInput; }
+		}
+		
+		private float pedalInput;
+		public float PedalInput
+		{
+			get { return pedalInput; }
+		}
 		#endregion
 		
 		
@@ -34,11 +58,40 @@ namespace IndiePixel
 			{
 				SetInputType(inputType);
 			}
-	    }
+		}
+	    
+		private void Update()
+		{
+			if(keyInput && xboxInput)
+			{
+				switch(inputType)
+				{
+				case InputType.Keyboard:
+					throttleInput = keyInput.ThrottleInput;
+					collectiveInput = keyInput.CollectiveInput;
+					cyclicInput = keyInput.CyclicInput;
+					pedalInput = keyInput.PedalInput;
+					break;		
+					
+				case InputType.Xbox:
+					throttleInput = xboxInput.ThrottleInput;
+					collectiveInput = xboxInput.CollectiveInput;
+					cyclicInput = xboxInput.CyclicInput;
+					pedalInput = xboxInput.PedalInput;
+					break;
+					
+				default:
+					break;
+				}
+			}
+		}
+	    
+	    
+	    
+	    
 		#endregion
 		
 		
-		 
 		 
 		#region Custom Methods
 		void SetInputType(InputType type)
