@@ -50,6 +50,8 @@ namespace IndiePixel
 			HandleCollective();
 			HandleCyclic();
 			HandlePedal();
+			
+			ClampInputs();
 		}
 		
 		protected virtual void HandleThrottle()
@@ -73,6 +75,14 @@ namespace IndiePixel
 			pedalInput = Input.GetAxis("Pedal");
 		}		
 		
+		
+		protected void ClampInputs()
+		{
+			throttleInput = Mathf.Clamp(throttleInput, -1f, 1f);
+			collectiveInput = Mathf.Clamp(collectiveInput, -1f, 1f);
+			cyclicInput = Vector2.ClampMagnitude(cyclicInput, 1f);
+			pedalInput = Mathf.Clamp(pedalInput, -1f, 1f);
+		}
 	
 
 	    #endregion
